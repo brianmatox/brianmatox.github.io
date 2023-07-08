@@ -80,6 +80,28 @@ h1 span:nth-child(12) {
 h1 span:nth-child(13) {
     -webkit-animation-delay: 0.7s;
 }
+h1 span:nth-child(15) {
+    -webkit-animation-delay: 1.1s;
+}
+h1 span:nth-child(16) {
+    -webkit-animation-delay: 1.2s;
+}
+h1 span:nth-child(17) {
+    -webkit-animation-delay: 1.3s;
+}
+h1 span:nth-child(18) {
+    -webkit-animation-delay: 1.4s;
+}
+
+h1 .fan {
+    -webkit-animation: spin 5s linear infinite;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 @-webkit-keyframes bounce {
     100% {
