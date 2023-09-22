@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Luckiest+Guy");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     background-color: skyblue;
@@ -19,13 +25,14 @@ h1 {
     margin: auto;
     display: block;
     text-align: center;
+    z-index: -10;
 }
 
 h1 span {
     position: relative;
     top: 20px;
     display: inline-block;
-    -webkit-animation: bounce 0.3s ease infinite alternate;
+    -webkit-animation: bounce 2.5s ease infinite alternate;
     font-size: 80px;
     color: #fff;
     text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
@@ -87,27 +94,183 @@ h1 span:nth-child(16) {
     -webkit-animation-delay: 1.2s;
 }
 h1 span:nth-child(17) {
-    -webkit-animation-delay: 1.3s;
+    -webkit-animation-delay: 1.13s;
 }
 h1 span:nth-child(18) {
-    -webkit-animation-delay: 1.4s;
+    -webkit-animation-delay: 1.34s;
 }
 
 h1 .fan {
     -webkit-animation: spin 5s linear infinite;
     animation: spin 2s linear infinite;
 }
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000; /* Place it on top of other elements */
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+footer strong, footer i {
+    margin: 0 5px;
+}
+
 @keyframes spin {
     100% {
         transform: rotate(360deg);
     }
 }
 
-@-webkit-keyframes bounce {
+/* @-webkit-keyframes bounce {
     100% {
         top: -20px;
         text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
             0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc,
             0 50px 25px rgba(0, 0, 0, 0.2);
     }
+} */
+@-webkit-keyframes bounce {
+    0%, 100% {
+        top: 0;
+        text-shadow: none;
+    }
+    10% { /* Fibonacci: 1 */
+        top: -1px;
+        text-shadow: 0 1px 0 #ccc;
+    }
+    20% { /* Fibonacci: 1 */
+        top: -5px;
+        text-shadow: 0 1px 0 #ccc;
+    }
+    30% { /* Fibonacci: 2 */
+        top: -8px;
+        text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc;
+    }
+    40% { /* Fibonacci: 3 */
+        top: -13px;
+        text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc;
+    }
+    50% { /* Fibonacci: 5 */
+        top: -21px;
+        text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 5px 0 #ccc;
+    }
+    60% { /* Fibonacci: 8 */
+        top: -34px;
+        text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc;
+    }
+    70% { /* Fibonacci: 13 */
+        top: -89px;
+        text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc, 0 10px 0 #ccc, 0 11px 0 #ccc, 0 12px 0 #ccc, 0 13px 0 #ccc;
+    }
+    80% { /* Fibonacci: 21 */
+        top: -21px;
+        text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc, 0 10px 0 #ccc, 0 11px 11px #ccc, 0 12px 12px #ccc, 0 13px 13px #ccc, 0 21px 21px;/* This list will get very long, so it might be best to truncate it or find a more manageable way to represent it */
+    }
+    /* We'll stop here due to the rapid growth of the Fibonacci numbers, which makes it impractical to continue much further in this format. */
+}
+
+/* symbol 
+#symbol-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.symbol {
+    position: absolute;
+    font-size: 40em;
+    animation: pop 1s forwards;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+*/
+.symbol {
+    position: absolute;
+    font-size: 800%;
+    z-index: 10;
+    animation: fadeInOut 1s forwards;
+    border: 2px dotted darkgoldenrod;
+    /* text-shadow: 1px double darkgoldenrod; */
+    /* box-shadow: black; */
+}
+#playSoundButton {
+    width: 50px;
+    height: 50px;
+    background-color: whitesmoke;
+    border: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 9999;
+    color:darkgoldenrod;;            /* Set the text color to white */
+    border: none;              /* Remove any default border */
+    cursor: pointer;           /* Indicate it's clickable */
+    font-size: 1.2em;          /* Make the font a bit larger */
+    border-radius: 5px;
+}
+
+
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    25% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+.letters {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: block;
+    /*transform: translate(-50%, -50%); /* Center the div */
+    transition: transform 1s; /* Smoothen the animation */
+}
+
+@keyframes moveAround {
+    0% {
+        transform: translate(-50%, -50%); /* Start from the center */
+    }
+    25% {
+        transform: translate(0, 0); /* Top-left */
+    }
+    50% {
+        transform: translate(calc(100% - 100px), 0); /* Top-right */
+    }
+    75% {
+        transform: translate(calc(100% - 100px), calc(100% - 50px)); /* Bottom-right */
+    }
+    100% {
+        transform: translate(0, calc(100% - 50px)); /* Bottom-left */
+    }
+}
+.letters {
+    /* ... Previous styles ... */
+    animation: moveAround 20s infinite; /* 20s duration and loop infinitely */
 }

@@ -1,0 +1,143 @@
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+
+.dance-button {
+    padding: 8px 21px 90px 13px;
+    font-size: 89%;
+    background-color: transparent;
+    border: 5px medium white;
+    color: white;
+    border-radius: 367px 590px 957px 1047px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.08s;
+    position: relative;
+    animation: dance 5s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+    text-shadow: 2px 89px 5px rgba(242, 225, 188, 0.509);
+    box-shadow: 0 5px 34px rgba(200, 193, 193, 0.843);
+}
+
+.dance-button:hover {
+    background-color: rgba(244, 223, 204, 0.276);
+}
+
+.dance-button::before, .dance-button::after {
+    content: "\f2dc \f2dc \f2dc \f2dc \f2dc"; /* This is the Font Awesome snowflake icon */
+    position: absolute;
+    width: 113%;
+    height: 89%;
+    top: 60px;
+    left: 0;
+    z-index: -1;
+    opacity: 0.1;
+    animation: snowfall 5s cubic-bezier(1, 0, 0, 1) infinite;
+    border: 5px medium white;
+}
+
+.dance-button::after {
+    top: -34%;
+    animation-delay: 8.5s;
+}
+.button-link {
+    text-decoration: none; /* To remove any default underlines */
+    color: inherit; /* To inherit the button's color */
+    display: inline-block;
+}
+
+
+@keyframes snowfall {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(20px); }
+}
+
+@keyframes snowfall {
+    to {
+        transform: translateY(100%);
+    }
+}
+
+
+@keyframes dance {
+    0%, 100% {
+        transform: translateY(0) translateX(0) rotate(0deg) scale(367%);
+        box-shadow: 0 5px 25px rgba(233, 195, 141, 0.364);
+    }
+    1%, 2% {
+        transform: translateY(-2vh) translateX(-2vw) rotate(-5deg) scale(1.02);
+    }
+    3% {
+        transform: translateY(2vh) translateX(2vw) rotate(5deg) scale(0.98);
+    }
+    5% {
+        transform: translateY(-3vh) translateX(-5vw) rotate(-8deg) scale(1.05);
+    }
+    8% {
+        transform: translateY(3vh) translateX(5vw) rotate(8deg) scale(0.95);
+    }
+    13% {
+        transform: translateY(0) translateX(0) rotate(12deg) scale(1.08);
+        box-shadow: 0 7px 20px rgba(242, 113, 113, 0.12);
+    }
+    21% {
+        transform: translateY(-4vh) translateX(-7vw) rotate(-10deg) scale(0.92);
+    }
+    34% {
+        transform: translateY(4vh) translateX(7vw) rotate(10deg) scale(1.10);
+    }
+    50% {
+        transform: translateY(0) translateX(0) rotate(15deg) scale(1);
+    }
+    55% {
+        transform: translateY(-5vh) translateX(-9vw) rotate(-15deg) scale(0.90);
+    }
+    89% {
+        transform: translateY(5vh) translateX(9vw) rotate(20deg) scale(13%);
+    }
+}
+
+
+/* ALTERNATE */
+
+.alternate-button {
+    padding: 10px 21px 55px 34px;
+    font-size: 30px;
+    background-color: rgba(233, 195, 141, 0.364);
+    border: 3px dotted rgba(233, 195, 141, 0.364);
+    color: rgb(244, 141, 90);
+    border-radius: 50px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    animation: alternateAnimation 5s ease-in-out infinite;
+}
+
+@keyframes alternateAnimation {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        background-color: transparent;
+    }
+    25% {
+        transform: translateY(-10px) scale(0.95);
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    50% {
+        transform: translateY(0) scale(1.05);
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    75% {
+        transform: translateY(10px) scale(0.95);
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+.alternate-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+
