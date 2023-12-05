@@ -16,6 +16,7 @@ body {
 .wrapper{
     width: 65vmin;
     height: 70vmin;
+    height: 100%;
     display: flex;
     overflow: hidden;
     flex-direction: column;
@@ -36,14 +37,125 @@ body {
     display: grid;
     grid-template: repeat(30, 1fr) / repeat(30, 1fr);
     background: #212837;
+    padding: 1%;
+    perspective: 600px; /* Enables 3D transforms */
 }
-.play-board .food {
+/*.play-board .food {
     background: #FF003D;   
 }
 .play-board .head {
     background: #60CBFF;
     border-radius: 5px;   
+}*/
+.play-board .food {
+    background: #FF003D;
+    border-radius: 50%; /* Makes the food look like a cherry */
+    box-shadow: 0 0 5px #9d0208; /* Adds a glow effect to make it look juicy */
 }
+
+/* .play-board .head {
+    background: linear-gradient(to right, #60CBFF, #0077B6); Adds a gradient effect
+    border-radius: 50%; Makes the head round
+    box-shadow: 0 0 10px #03045e; Adds a glow effect
+} */
+.play-board .head {
+    background: radial-gradient(circle at center, #60CBFF, #0077B6); /* Adds a radial gradient effect */
+    background-color: linear-gradient(to left, #60CBFF, #0077B6); /* Adds a gradient effect */
+    /* background: linear-gradient(to right, #60CBFF, #0077B6); */
+    /* border-radius: 50%; */
+    box-shadow: 0 0 10px #b1042c;
+    width: 20px; /* Makes the head larger */
+    height: 20px; /* Makes the head larger */
+    /*transform: rotateX(35deg);  Adds a 3D effect */
+    transform: rotate3d(1, 1, 1, 35deg);
+    transition: background-color 2s;
+    transition-delay: 1s;
+}
+
+.play-board .body {
+    background: linear-gradient(to right, #60CBFF, #0077B6); /* Adds a gradient effect */
+    background-color: linear-gradient(to left, #60CBFF, #0077B6); /* Adds a gradient effect */
+    border-radius: 37%;
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.2); /* Adds a shadow effect */
+    width: 12px; /* Makes the body smaller */
+    height: 12px; /* Makes the body smaller */
+    transition: all 0.s7 ease; /* Adds a smooth transition effect */
+    /*transform: rotateX(35deg);  Adds a 3D effect */
+    transform: rotate3d(1, 1, 1, 35deg);
+    transition: background-color 2s;
+    transition-delay: 1s;
+}
+
+.play-board .tail {
+    background: radial-gradient(circle at center, #60CBFF, #0077B6); /* Adds a radial*/
+    /* background: linear-gradient(to left, #60CBFF, #0077B6); */
+    /* border-radius: 50%; */
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.2); /* Adds a shadow effect */
+    width: 10px; /* Makes the tail smaller */
+    height: 10px; /* Makes the tail smaller */
+    transform: scale(0.9); /* Makes the tail slightly smaller */
+    /*transform: rotateX(35deg);  Adds a 3D effect */
+    transform: rotate3d(1, 1, 1, 35deg);
+}
+
+/* Default styles */
+.play-board .head, .play-board .tail {
+    border-radius: 50%;
+    /* other styles... */
+}
+
+/* Styles when the snake is moving up */
+.play-board .head.moving-up {
+    border-radius: 0 0 50% 50%;
+}
+.play-board .tail.moving-up {
+    border-radius: 50% 50% 0 0;
+}
+
+/* Styles when the snake is moving right */
+.play-board .head.moving-right {
+    border-radius: 50% 0 0 50%;
+}
+.play-board .tail.moving-right {
+    border-radius: 0 50% 50% 0;
+}
+
+/* Styles when the snake is moving down */
+.play-board .head.moving-down {
+    border-radius: 50% 50% 0 0;
+}
+.play-board .tail.moving-down {
+    border-radius: 0 0 50% 50%;
+}
+
+/* Styles when the snake is moving left */
+.play-board .head.moving-left {
+    border-radius: 0 50% 50% 0;
+}
+.play-board .tail.moving-left {
+    border-radius: 50% 0 0 50%;
+}
+@keyframes fade {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.play-board .body, .play-board .tail {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+/* .play-board .head, .play-board .body, .play-board .tail {
+    background: linear-gradient(to right, #60CBFF, #0077B6); 
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.2); 
+    width: 15px;
+    height: 15px;
+    transition: all 0.5s ease; 
+} */
+
+
 .controls{
     display: none;
     justify-content: space-between;
