@@ -1,6 +1,6 @@
 /*document.addEventListener("DOMContentLoaded", function () {
 
-    const symbols = ["●", "■", "▬", "♠", "♣", "♥", "♦", "♪", "‽", "ᴥ", "ࢠ", "۹", "®", "©", "@", "=", "#", "▼"];
+    const symbols = ["●", "■", "▬", "♠", "♣", "♥", "♫♦%ׁׂ♫", "♪", "‽", "ᴥ", "ࢠ", "۹", "®", "©", "@", "=", "#", "▼"];
     const container = document.getElementById('symbol-container');
 
     setInterval(() => {
