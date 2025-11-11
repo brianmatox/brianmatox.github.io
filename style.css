@@ -7,7 +7,8 @@ html, body {
 }
 
 body {
-    background-color: skyblue;
+    /*background-color: skyblue;*/
+    background-color: orange;
     overflow: hidden;
     font-family: "Luckiest Guy", cursive;
     -webkit-font-smoothing: antialiased;
@@ -274,3 +275,4 @@ footer strong, footer i {
     /* ... Previous styles ... */
     animation: moveAround 20s infinite; /* 20s duration and loop infinitely */
 }
+
