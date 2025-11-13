@@ -12,7 +12,7 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #6563ff;
+    background: #fad1b3;
 }
 .wrapper{
     height: 400px;
@@ -166,4 +166,5 @@ body{
 #decreaseButton:hover {
     background-color: #5050d4;
 }
+
 
