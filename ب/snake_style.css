@@ -191,6 +191,13 @@ body {
     }
 }
 
+/* Additional query for touchscreens, regardless of size (e.g., a large touchscreen monitor) */
+@media (hover: none) and (pointer: coarse) {
+    .controls{
+        display: flex; /* Ensure controls are visible on all touch devices */
+    }
+ }
+
 
 /* Style for the index  */
 .index_wrapper {
@@ -227,4 +234,5 @@ body {
   button:focus {
     outline: none;
   }
+
 
