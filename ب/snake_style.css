@@ -11,7 +11,8 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #E3F2FD;    
+    /*background: #E3F2FD;*/
+    background: #fad1b3;
 }
 .wrapper{
     width: 65vmin;
